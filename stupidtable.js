@@ -203,15 +203,15 @@
 
     });
 
-    if (sort_info.sort_dir != $.fn.stupidtable.dir.ASC){
+    //if (sort_info.sort_dir != $.fn.stupidtable.dir.ASC){
       table_structure.reverse();
-    }
+    //}
       return table_structure;
   };
 
   var get_th = function($table, identifier){
       // identifier can be a th id or a th index number;
-      var $table_ths = $table.find('th');
+      var $table_ths = $table.find('th button');
       var index = parseInt(identifier, 10);
       var $th;
       if(!index && index !== 0){
@@ -269,7 +269,7 @@
   var calculateTHIndex = function(sort_info){
     var th_index = 0;
     var base_index = sort_info.$th.index();
-    sort_info.$th.parents("tr").find("th").slice(0, base_index).each(function() {
+    sort_info.$th.parents("tr").find("th button").slice(0, base_index).each(function() {
       var cols = $(this).attr("colspan") || 1;
       th_index += parseInt(cols,10);
     });
