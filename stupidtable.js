@@ -203,9 +203,9 @@
 
     });
 
-    //if (sort_info.sort_dir != $.fn.stupidtable.dir.ASC){
+    if (sort_info.sort_dir != $.fn.stupidtable.dir.ASC){
       table_structure.reverse();
-    //}
+    }
       return table_structure;
   };
 
@@ -268,8 +268,8 @@
 
   var calculateTHIndex = function(sort_info){
     var th_index = 0;
-    var base_index = sort_info.$th.index();
-    sort_info.$th.parents("tr").find("th button").slice(0, base_index).each(function() {
+    var base_index = sort_info.$th.parents('th').index();
+    sort_info.$th.parents("tr").find("th").slice(0, base_index).each(function() {
       var cols = $(this).attr("colspan") || 1;
       th_index += parseInt(cols,10);
     });
