@@ -9,7 +9,7 @@
       $table.data('sortFns', sortFns);
       $table.stupidtable_build();
 
-      $table.on("click.stupidtable", "thead th", function() {
+      $table.on("click.stupidtable", "thead th button", function() {
           $(this).stupidsort();
       });
 
